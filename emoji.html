@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<hmtl lang='pt-BR'>
+<head>
+    <title> Emoji</title>
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width,initial-scale=1.0'>
+    <meta http-equiv="refresh" content='120'/>
+    <style> 
+    /* .emoji{
+        transition: 0.5s;
+        font-size: 120px;
+        cursor: pointer;
+        display: inline-block;
+        width: 0.1px;
+        
+    } 
+    .emoji:hover{
+        transform: scale(1.1);
+        transition: 1.5s;
+        animation: shaker linear infinite;
+    } 
+
+   */
+    .emoji{
+        transition: 0.5s;
+        font-size: 120px;
+        cursor: pointer;
+        display: none;
+        width: 0.1px;
+    }
+    .emoji:hover{
+        transform: scale(1.1);
+        transition: 1.5s;
+        animation: shaker linear infinite;
+    }
+    </style>
+</head>
+<body> 
+
+
+<div id='app'>
+    <select name="selectEmoji" id="selectEmoji">
+        <optgroup label="Feelings"> 
+        <option value=""></option>
+       
+        <option value="sad">Sad</option>
+        <option value="crazy">Crazy</option>
+        <option value="cool">Cool</option>
+        <option value="in love">In love</option>
+        <option value="angry">Angry</option>
+        <option value="frozen">Frozen</option>
+        <option value="flustered">Flustered</option>
+        <option value="joyous">Joyous</option>
+        <option value="indecisive">Indecisive</option> 
+        <option value="kisser">Kisser</option>
+        <option value="liar">Liar</option>
+        <option value="yawn">Yawn</option>
+        
+        </optgroup>
+    </select>
+    <button onclick='verify()''>Verify</button>
+    <!-- <div class='emoji'>🤔</div>
+    <div class='emoji'>🤬</div> 
+    <div class='emoji'>🤪</div>
+    <div class='emoji'>😎</div>
+    <div id='emojiHappy' class='emoji'>😂</div> 
+    <div class='emoji'>😍</div> 
+    <div class='emoji'>🥺</div>
+    <div id='emojiFrozen' class='emoji'>🥶</div>
+    <div id='emojiWeep' class='emoji'>😭</div>
+    <div id='emojiLiar' class='emoji'>🤥</div>
+-->
+
+</div>
+   
+    <script>
+       
+
+        // Emoji Happy
+         var emojiHappy=document.createElement('div')
+            var txtHappy=document.createTextNode('😂')
+            
+            emojiHappy.setAttribute('class','emoji')
+            emojiHappy.setAttribute('id','emojiHappy')
+            
+            emojiHappy.appendChild(txtHappy)
+            document.body.appendChild(emojiHappy)
+
+        // Emoji in love 
+
+            var emojiInLove=document.createElement('div') 
+            var emojiInLoveTxt=document.createTextNode('😍')
+
+            emojiInLove.setAttribute('class','emoji')
+            emojiInLove.setAttribute('id','emojiInLove')
+
+            emojiInLove.appendChild(emojiInLoveTxt)
+            document.body.appendChild(emojiInLove)
+
+            // Emoji Frozen 
+
+          var emojiFrozen=document.createElement('div')
+            var emojiFrozenTxt=document.createTextNode('🥶')
+
+            emojiFrozen.setAttribute('id','emojiFrozen')
+            emojiFrozen.setAttribute('class','emoji')
+
+            emojiFrozen.appendChild(emojiFrozenTxt)
+            document.body.appendChild(emojiFrozen)
+
+            // Emoji cool 
+
+            var emojiCool=document.createElement('div')
+            var emojiCoolTxt=document.createTextNode('😎')
+
+            emojiCool.setAttribute('class','emoji')
+            emojiCool.setAttribute('id','emojiCool')
+
+            emojiCool.appendChild(emojiCoolTxt)
+            document.body.appendChild(emojiCool)
+
+            // Emoji angry 
+
+            var emojiAngry=document.createElement('div')
+            var emojiAngryTxt=document.createTextNode('🤬')
+
+            emojiAngry.setAttribute('id','emojiAngry')
+            emojiAngry.setAttribute('class','emoji')
+
+            emojiAngry.appendChild(emojiAngryTxt)
+            document.body.appendChild(emojiAngry)
+
+            // Emoji Crazy 
+
+            var emojiCrazy=document.createElement('div')
+            var emojiCrazyTxt=document.createTextNode('🤪')
+
+            emojiCrazy.setAttribute('id','emojiCrazy')
+            emojiCrazy.setAttribute('class','emoji')
+
+           emojiCrazy.appendChild(emojiCrazyTxt)
+            document.body.appendChild(emojiCrazy)
+            
+            // Emoji indecisive 
+
+            let emojiIndecisive=document.createElement('div')
+            let emojiIndecisiveTxt=document.createTextNode('🤔')
+
+            emojiIndecisive.setAttribute('id','emojiIndecisive')
+            emojiIndecisive.setAttribute('class','emoji')
+
+            emojiIndecisive.appendChild(emojiIndecisiveTxt)
+            document.body.appendChild(emojiIndecisive)
+
+            // Emoji flustered 
+
+            let emojiFlustered=document.createElement('div')
+            let emojiFlusteredTxt=document.createTextNode('🥺')
+
+            emojiFlustered.setAttribute('class','emoji')
+            emojiFlustered.setAttribute('id','emojiFlustered')
+        
+            emojiFlustered.appendChild(emojiFlusteredTxt)
+            document.body.appendChild(emojiFlustered)
+
+            // Emoji weep 
+
+            const emojiWeep=document.createElement('div')
+            const emojiWeepTxt=document.createTextNode('😭')
+            
+            emojiWeep.setAttribute('class','emoji')
+            emojiWeep.setAttribute('id','emojiWeep')
+
+            emojiWeep.appendChild(emojiWeepTxt)
+            document.body.appendChild(emojiWeep)
+                
+            // Emoji liar 
+
+            let emojiLiar= document.createElement('div')
+            let emojiLiarTxt=document.createTextNode('🤥')
+
+            emojiLiar.setAttribute('class','emoji ')
+            emojiLiar.setAttribute('id','emojiLiar')
+          
+
+            emojiLiar.appendChild(emojiLiarTxt)
+            document.body.appendChild(emojiLiar)
+            
+            //emoji kisser 
+
+            let emojiKisser=document.createElement('div')
+            let emojiKisserTxt=document.createTextNode('💋')
+            
+            emojiKisser.setAttribute('class','emoji')
+            emojiKisser.setAttribute('id','emojiKisser')
+           
+
+            emojiKisser.appendChild(emojiKisserTxt)
+            document.body.appendChild(emojiKisser)
+
+
+            // Emoji yawn 
+
+            let emojiYawn = document.createElement('div')
+            let emojiYawnTxt=document.createTextNode('🥱') 
+
+            emojiYawn.setAttribute('id','emojiYawn')
+            emojiYawn.setAttribute('class','emoji')
+
+            emojiYawn.appendChild(emojiYawnTxt)
+            document.body.appendChild(emojiYawn)
+
+        function verify(){
+            var selected=window.document.querySelector('select')
+            if(selected.value!=''){
+                if(selected.value=='joyous'){
+               emojiHappy.style.display='inline-block'
+               selected.disabled=true
+
+            }else if(selected.value=='in love'){
+                emojiInLove.style.display='inline-block'
+                selected.disabled=true
+
+            }else if(selected.value=='frozen'){
+                emojiFrozen.style.display='inline-block'
+                selected.disabled=true
+
+            }else if(selected.value=='cool'){
+                emojiCool.style.display='inline-block'
+                selected.disabled=true
+
+            }else if(selected.value=='angry'){
+                emojiAngry.style.display='inline-block'
+                selected.disabled=true
+
+            }else if(selected.value=='crazy'){
+                emojiCrazy.style.display='inline-block'
+                selected.disabled=true
+
+            }else if(selected.value=='indecisive'){
+                emojiIndecisive.style.display='inline-block'
+                selected.disabled=true
+
+            }else if(selected.value=='flustered'){
+                emojiFlustered.style.display='inline-block'
+                selected.disabled=true
+
+            }else if(selected.value=='sad'){
+                emojiWeep.style.display='inline-block'
+                selected.disabled=true
+            }else if(selected.value=='liar'){
+                emojiLiar.style.display='inline-block'
+                selected.disabled=true
+            }else if(selected.value=='kisser'){
+                emojiKisser.style.display='inline-block'
+                selected.disabled=true
+            }else if(selected.value=='yawn'){
+                emojiYawn.style.display='inline-block'
+                selected.disabled=true
+            }else if(selected.value=='liar'){
+                emojiLiar.style.display='inline-block' 
+                selected.disabled=true;
+            }
+        }else{
+            alert('Selecione uma opção')
+            selected.focus()
+        }
+            
+    }
+    </script>
+</body>
+</hmtl>
